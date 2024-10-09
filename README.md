@@ -75,6 +75,13 @@ r = inst.Start_Conversation('ABC', '내가 너에게 뭐를 요청한거 같아?
 print(r)
 ```
 
+<br>
+
+9. 아예 등록한 대화 key를 삭제하고 싶다면?
+```python
+inst.Termicate_Conversation('ABC')
+```
+
 ---
 
 <br>
