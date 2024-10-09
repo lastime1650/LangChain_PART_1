@@ -10,7 +10,7 @@
 
 1. 먼저 Class 인스턴스를 생성합니다.
 ```python
-inst = Create_Chain()
+inst = LLM_Manager()
 ```
 
 <br>
