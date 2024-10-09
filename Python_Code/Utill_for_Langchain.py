@@ -12,7 +12,7 @@ from langchain.prompts import (
 from langchain.schema import SystemMessage, HumanMessage, AIMessage
 
 
-class Create_Chain():
+class LLM_Manager():
     def __init__(self):
         self.Chains = {}
         '''
@@ -148,7 +148,7 @@ class Create_Chain():
             return False
 
 
-inst = Create_Chain()
+inst = LLM_Manager()
 inst.Init_Select_Model("ABC", Ollama(base_url='http://192.168.0.100:11434', model='gemma2'))
 inst.Init_Conversation_Memory('ABC', True)
 
