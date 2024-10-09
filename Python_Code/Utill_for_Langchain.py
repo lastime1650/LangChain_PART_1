@@ -123,16 +123,20 @@ class LLM_Manager():
     def Start_Conversation(self, ConversationID:str, Input:str)->Optional[Dict]:
         output = None
         if (not self.Check_exists_ConversationID(ConversationID)):
-            return False  # 이미 존재하지 않으면 실패
+            return output  # 이미 존재하지 않으면 실패
 
         if (not self.Chains[ConversationID]["Chain"]):
-            return False # 이미 존재하지 않으면 실패
+            return output # 이미 존재하지 않으면 실패
 
         #output = self.Chains[ConversationID]["Chain"].predict(ConversationID)
         output = self.Chains[ConversationID]["Chain"].invoke({
             ConversationID: ConversationID,
             "input": Input
         })
+
+
+
+        return output
 
 
 
@@ -146,6 +150,14 @@ class LLM_Manager():
             return True
         else:
             return False
+    '''
+        대화 삭제
+    '''
+    def Termicate_Conversation(self, ConversationID:str)->bool:
+        if (not self.Check_exists_ConversationID(ConversationID)):
+            return False  # 이미 존재하지 않으면 실패
+        self.Chains.pop(ConversationID)
+        return True
 
 
 inst = LLM_Manager()
