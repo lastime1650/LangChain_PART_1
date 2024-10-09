@@ -44,6 +44,7 @@ inst.Conversation_Memory_add_SystemMessage('ABC', '너는 완벽한 응답을 �
 5. 추가적으로 Conversation_Memory_add_userMessage, Conversation_Memory_add_aiMessage를 통하여 사전에 질의응답을 생성할 수 있습니다. 
 ```python
 # 이는  선택이지만, 미리 사전 인터뷰를 하려면 사용해야합니다.
+# 주의하세요!@ 이러한 메시지들은 주로 "학습할 때" 사용하면 좋습니다. ( 실시간 대화 중에서도 ) 
 inst.Conversation_Memory_add_userMessage('ABC', '넌 누구야?')
 inst.Conversation_Memory_add_aiMessage('ABC', '저는 EDR제품사에서 개발된 챗봇이에요')
 ```
