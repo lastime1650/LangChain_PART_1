@@ -26,6 +26,7 @@ inst.Init_Select_Model("ABC", Ollama(base_url='http://192.168.0.100:11434', mode
 
 3. "Init_Conversation_Memory"를 호출하여 "대화 메모리"객체를 최초 등록합니다. ( Option )
 ```python
+# 이는  선택이지만, 이전 대화 기억을 하려면 사용해야합니다.
 inst.Init_Conversation_Memory('ABC', True)
 ```
 
@@ -33,6 +34,7 @@ inst.Init_Conversation_Memory('ABC', True)
 
 4. "Conversation_Memory_add_SystemMessage"를 호출하여 "Prompt"에서가 아닌, "Memory"에 System을 등록합니다. ( Option )
 ```python
+# 이는  선택이지만, 미리 저장된 방대한 사전 system을 등록 하려면 사용해야합니다.
 inst.Conversation_Memory_add_SystemMessage('ABC', '너는 완벽한 응답을 하는 챗봇이야. 그리고 너는 오직 한국어만 응답할 수 있다.')
 ```
 
@@ -40,6 +42,7 @@ inst.Conversation_Memory_add_SystemMessage('ABC', '너는 완벽한 응답을 �
 
 5. 추가적으로 Conversation_Memory_add_userMessage, Conversation_Memory_add_aiMessage를 통하여 사전에 질의응답을 생성할 수 있습니다. 
 ```python
+# 이는  선택이지만, 미리 사전 인터뷰를 하려면 사용해야합니다.
 inst.Conversation_Memory_add_userMessage('ABC', '넌 누구야?')
 inst.Conversation_Memory_add_aiMessage('ABC', '저는 EDR제품사에서 개발된 챗봇이에요')
 ```
