@@ -153,7 +153,7 @@ class LLM_Manager():
     '''
         대화 삭제
     '''
-    def Termicate_Conversation(self, ConversationID:str)->bool:
+    def Terminate_Conversation(self, ConversationID:str)->bool:
         if (not self.Check_exists_ConversationID(ConversationID)):
             return False  # 이미 존재하지 않으면 실패
         self.Chains.pop(ConversationID)
