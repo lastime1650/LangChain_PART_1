@@ -19,6 +19,7 @@ inst = LLM_Manager()
 <br>2-1. 1번째 매개변수는 앞으로 저장할 딕셔너리의 key 값입니다.
 <br>2-2. 2번째 매개변수는 LLM모델 객체입니다.
 ```python
+#아래 LLm은 예시입니다. 테스트당시 rocky-linux에 ollama container를 설치하여 google의 gemma2:9b 4k 를 테스트하였습니다.
 inst.Init_Select_Model("ABC", Ollama(base_url='http://192.168.0.100:11434', model='gemma2'))
 ```
 
