@@ -12,8 +12,33 @@
 
 <br>
 
-3. (1.)에 생성한 인스턴스에 "Init_Select_Model"을 최초 호출하여 LLM모델 객체와 함께 등록합니다.
-<br>2-1. dd
+2. (1.)에 생성한 인스턴스에 "Init_Select_Model"을 최초 호출하여 LLM모델 객체와 함께 등록합니다.
+<br>2-1. 1번째 매개변수는 앞으로 저장할 딕셔너리의 key 값입니다.
+<br>2-2. 2번째 매개변수는 LLM모델 객체입니다.
+
+<br>
+
+3. "Init_Conversation_Memory"를 호출하여 "대화 메모리"객체를 최초 등록합니다. ( Option )
+
+<br>
+
+4. "Conversation_Memory_add_SystemMessage"를 호출하여 "Prompt"에서가 아닌, "Memory"에 System을 등록합니다. ( Option )
+
+<br>
+
+5. 추가적으로 Conversation_Memory_add_userMessage, Conversation_Memory_add_aiMessage를 통하여 사전에 질의응답을 생성할 수 있습니다. 
+
+<br>
+
+6. 필수요소인, Prompt는 "Set_Prompt"를 호출하여 생성합니다.
+
+<br>
+
+7. "Set_Chain"는 체인을 생성합니다. (1~부터 순차적으로 성공한다면 체인을 제대로 생성할 수 있습니다 )
+
+<br>
+
+8. 자 이제 대화를 해야겠죠? "Start_Conversation"를 호출하여 시작합니다
 
 ---
 
