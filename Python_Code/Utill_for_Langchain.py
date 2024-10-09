@@ -151,9 +151,13 @@ class Create_Chain():
 inst = Create_Chain()
 inst.Init_Select_Model("ABC", Ollama(base_url='http://192.168.0.100:11434', model='gemma2'))
 inst.Init_Conversation_Memory('ABC', True)
+
+# 선택임
 inst.Conversation_Memory_add_SystemMessage('ABC', '너는 완벽한 응답을 하는 챗봇이야. 그리고 너는 오직 한국어만 응답할 수 있다.')
 
-inst.Conversation_Memory_add_userMessage('ABC', )
+# 선택임
+inst.Conversation_Memory_add_userMessage('ABC', '넌 누구야?')
+inst.Conversation_Memory_add_aiMessage('ABC', '저는 EDR제품사에서 개발된 챗봇이에요')
 
 inst.Set_Prompt('ABC', '너는 훌륭한 한국어 전용 챗봇이다.')
 inst.Set_Chain("ABC")
