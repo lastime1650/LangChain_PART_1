@@ -83,13 +83,13 @@ class LLM_Manager():
         if (not self.Check_exists_ConversationID(ConversationID)):
             return False  # 이미 존재하지 않으면 실패
 
+        # MessagesPlaceholder 덕분에 Template에 따로 "이전 대화 기록"추가하지 않고, 변수로 저장하여 기억함.
         Prompt = ChatPromptTemplate(
             messages=[
                 SystemMessagePromptTemplate.from_template('''
-                history_conversation:{'''+ConversationID+'''}.
-                System: '''+Prompt_System_Message+'''.
-                Human: {input}.
-                AI:
+                System: '''+Prompt_System_Message+'''
+                Human say: {input}
+                AI say
                 '''),
                 HumanMessagePromptTemplate.from_template("{input}"),
                 MessagesPlaceholder(variable_name=ConversationID)
