@@ -64,6 +64,12 @@ inst.Set_Chain("ABC")
 ```python
 r = inst.Start_Conversation('ABC', '안녕하세요')['text']
 print(r)
+
+r = inst.Start_Conversation('ABC', '배고픈데 어떻게 하지?')['text']
+print(r)
+
+r = inst.Start_Conversation('ABC', '내가 너에게 뭐를 요청한거 같아?')['text']
+print(r)
 ```
 
 ---
