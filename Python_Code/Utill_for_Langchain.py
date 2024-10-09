@@ -130,17 +130,16 @@ class LLM_Manager():
 
         #output = self.Chains[ConversationID]["Chain"].predict(ConversationID)
         output = self.Chains[ConversationID]["Chain"].invoke({
-            ConversationID: ConversationID,
             "input": Input
         })
 
+        #if(output):
+            #self.Chains[ConversationID]['Conversation_Memory_inst'].chat_memory.add_user_message(Input)
+            #self.Chains[ConversationID]['Conversation_Memory_inst'].chat_memory.add_ai_message(output['text'])
 
 
         return output
 
-
-
-        return output
     '''
         잡다한 것
     '''
@@ -165,21 +164,20 @@ inst.Init_Select_Model("ABC", Ollama(base_url='http://192.168.0.100:11434', mode
 inst.Init_Conversation_Memory('ABC', True)
 
 # 선택임
-inst.Conversation_Memory_add_SystemMessage('ABC', '너는 완벽한 응답을 하는 챗봇이야. 그리고 너는 오직 한국어만 응답할 수 있다.')
+inst.Conversation_Memory_add_SystemMessage('ABC', '너는 한국어만 하는 챗봇. 문장은 최대 3개만 응답.')
 
 # 선택임
-inst.Conversation_Memory_add_userMessage('ABC', '넌 누구야?')
-inst.Conversation_Memory_add_aiMessage('ABC', '저는 EDR제품사에서 개발된 챗봇이에요')
+inst.Conversation_Memory_add_userMessage('ABC', '너는 너의 이름을 알아?')
+inst.Conversation_Memory_add_aiMessage('ABC', '저는 저의 이름을 모르겠어요')
+inst.Conversation_Memory_add_userMessage('ABC', '너의 이름은 COMINAM이야')
 
-inst.Set_Prompt('ABC', '너는 훌륭한 한국어 전용 챗봇이다.')
+inst.Set_Prompt('ABC', '너는 훌륭하고 완벽한 한국어 전용 챗봇이다. 이전 대화를 참조하여 자연스럽게 응답하라.')
 inst.Set_Chain("ABC")
 
 
-r = inst.Start_Conversation('ABC', '안녕하세요')['text']
+
+r = inst.Start_Conversation('ABC', '안녕 내 이름은 CHO야 너는? 너의 이름이 뭔지 알려줘')['text']
 print(r)
 
-r = inst.Start_Conversation('ABC', '배고픈데 어떻게 하지?')['text']
-print(r)
-
-r = inst.Start_Conversation('ABC', '내가 너에게 뭐를 요청한거 같아?')['text']
+r = inst.Start_Conversation('ABC', '안녕 COMINAM! 지금 뭐하는지 알려줄래?')['text']
 print(r)
