@@ -79,7 +79,7 @@ print(r)
 
 9. 아예 등록한 대화 key를 삭제하고 싶다면?
 ```python
-inst.Termicate_Conversation('ABC')
+inst.Terminate_Conversation('ABC')
 ```
 
 ---
