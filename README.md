@@ -1,4 +1,4 @@
-# LangChain_PART_1
+# LangChain_with_ConversationMemory
 랭체인 기반으로 이전대화를 기록하는 LLM을 쉽게 사용할 수 있도록 개발하였습니다.
 
 <br>
